@@ -1,5 +1,9 @@
-from gol import GolConfig
+from gol.config import GolConfig
+from gol.map_reader import MapReader
+from gol.gol import GameOfLife
 
-if __name__ == '__main__':
-    c = GolConfig('settings.cfg')
-    print(c.reader_alive_cell)
+config = GolConfig('settings.cfg')
+reader = MapReader(config)
+board = reader.read('test.map')
+gol = GameOfLife(board, config)
+gol.run(50)
