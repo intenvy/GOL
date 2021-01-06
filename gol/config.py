@@ -5,6 +5,7 @@ from typing import Dict
 
 
 class Config(ABC):
+
     __slots__ = 'parser', 'directory'
 
     def __init__(self, directory: str) -> None:
@@ -46,11 +47,11 @@ class GolConfig(Config):
 
     @property
     def reader_dead_cell(self) -> str:
-        return self.parser['DISPLAY']['dead_cell'][1:-1]
+        return self.parser['MAP_READER']['dead_cell'][1:-1]
 
     @property
     def reader_alive_cell(self) -> str:
-        return self.parser['DISPLAY']['alive_cell'][1:-1]
+        return self.parser['MAP_READER']['alive_cell'][1:-1]
 
     @property
     def frame_sleep(self) -> float:
