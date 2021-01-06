@@ -5,7 +5,6 @@ from typing import Dict
 
 
 class Config(ABC):
-
     __slots__ = 'parser', 'directory'
 
     def __init__(self, directory: str) -> None:
@@ -60,3 +59,7 @@ class GolConfig(Config):
     @property
     def skip_frames(self) -> int:
         return int(self.parser['PERFORMANCE']['skip_frames'])
+
+    @property
+    def map_directory(self) -> str:
+        return self.parser['RESOURCES']['maps']
