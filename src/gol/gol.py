@@ -1,9 +1,11 @@
-from abc import ABC, abstractmethod
-from typing import List
-from time import sleep as time_sleep
-import numpy as np
 import os
-from gol.config import GolConfig
+from abc import ABC, abstractmethod
+from time import sleep as time_sleep
+from typing import List
+
+import numpy as np
+
+from src.utils.config import GolConfig
 
 
 class FrameSimulation(ABC):
@@ -64,5 +66,5 @@ class GameOfLife(FrameSimulation):
         for frame in range(frames):
             print('s')
             self.display()
-            self.step(self.skip_frames+1)
+            self.step(self.skip_frames + 1)
             time_sleep(self.frame_sleep)

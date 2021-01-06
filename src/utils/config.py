@@ -5,7 +5,6 @@ from typing import Dict
 
 
 class Config(ABC):
-
     __slots__ = 'parser', 'directory'
 
     def __init__(self, directory: str) -> None:

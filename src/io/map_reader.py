@@ -1,10 +1,11 @@
 from typing import List, Dict
+
 from numpy import array
-from gol.config import GolConfig
+
+from src.utils.config import GolConfig
 
 
 class MapReader:
-
     __slots__ = 'base_directory', 'dead_cell', 'alive_cell'
 
     def __init__(self, config: GolConfig) -> None:
